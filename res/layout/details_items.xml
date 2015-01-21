@@ -13,28 +13,6 @@
         android:ems="10"
         android:inputType="date" />
 
-    <EditText
-        android:id="@+id/categoryText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/dateofItemText"
-        android:ems="10" >
-
-        <requestFocus />
-    </EditText>
-
-    <EditText
-        android:id="@+id/textualdescriptionText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/categoryText"
-        android:layout_marginBottom="44dp"
-        android:ems="10" />
 
     <Button
         android:id="@+id/donedetails"
@@ -44,5 +22,34 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:text="Done" />
+
+    <EditText
+        android:id="@+id/costText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/typecurrency_spinner"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/typecurrency_spinner"
+        android:ems="10"
+        android:inputType="numberDecimal" >
+
+        <requestFocus />
+    </EditText>
+
+    <Spinner
+        android:id="@+id/category_spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/dateofItemText"
+        android:layout_marginTop="36dp" />
+
+    <Spinner
+        android:id="@+id/typecurrency_spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/category_spinner"
+        android:layout_marginTop="31dp" />
 
 </RelativeLayout>

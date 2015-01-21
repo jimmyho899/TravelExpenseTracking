@@ -25,6 +25,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
 import android.widget.Toast;
 
 
@@ -65,6 +67,15 @@ public class MainActivity extends Activity {
     
     public void emailClaim(MenuItem menu) {
     	Toast.makeText(this, "Email Claim", Toast.LENGTH_SHORT).show();
+    	
+    }
+    
+    public void addClaimAction(View v) {
+    	Toast.makeText(this, "Add Claim", Toast.LENGTH_SHORT).show();	
+    	ClaimListController claim = new ClaimListController();
+    	EditText textView = (EditText) findViewById(R.id.addClaimNameText);
+    	claim.addClaim(new Claim(textView.getText().toString()));
+    	
     	
     }
 }
