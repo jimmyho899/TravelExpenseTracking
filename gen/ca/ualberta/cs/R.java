@@ -25,19 +25,20 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int ItemListView=0x7f080009;
-        public static final int action_settings=0x7f08000a;
+        public static final int ItemListView=0x7f08000a;
+        public static final int action_settings=0x7f08000b;
         public static final int addClaimButton=0x7f080000;
         public static final int addClaimNameText=0x7f080001;
-        public static final int addItemButton=0x7f080007;
-        public static final int addItemNameText=0x7f080008;
-        public static final int categoryText=0x7f080004;
+        public static final int addItemButton=0x7f080008;
+        public static final int addItemNameText=0x7f080009;
+        public static final int category_spinner=0x7f080007;
         public static final int claimListView=0x7f080002;
+        public static final int costText=0x7f080005;
         public static final int dateofItemText=0x7f080003;
-        public static final int donedetails=0x7f080006;
-        public static final int editClaimItem=0x7f08000b;
-        public static final int emailClaimItem=0x7f08000c;
-        public static final int textualdescriptionText=0x7f080005;
+        public static final int donedetails=0x7f080004;
+        public static final int editClaimItem=0x7f08000c;
+        public static final int emailClaimItem=0x7f08000d;
+        public static final int typecurrency_spinner=0x7f080006;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
@@ -51,6 +52,7 @@ public final class R {
     }
     public static final class string {
         public static final int action_settings=0x7f050002;
+        public static final int addbutton=0x7f050004;
         public static final int app_name=0x7f050000;
         public static final int hello_world=0x7f050001;
         public static final int title_activity_list_items=0x7f050003;
