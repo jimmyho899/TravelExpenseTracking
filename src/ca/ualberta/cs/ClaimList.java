@@ -1,18 +1,17 @@
 package ca.ualberta.cs;
 
 import java.util.ArrayList;
-import java.util.Collection;
 
 
 public class ClaimList {
 
-	protected ArrayList<Claim> claimList;
+	protected static ArrayList<Claim> claimList;
 
 	public ClaimList(){	
 		claimList = new ArrayList<Claim>();
 	}
 	
-	public Collection<Claim> getClaims() {
+	public static ArrayList<Claim> getClaims() {
 		return claimList;
 	}
 

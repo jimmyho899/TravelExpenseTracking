@@ -20,22 +20,35 @@
 
 package ca.ualberta.cs;
 
+import java.util.ArrayList;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.Toast;
 
 
 public class MainActivity extends Activity {
+	
+	private ArrayList<Claim> listofClaims = new ArrayList<Claim>();
+	
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        
+        
+        
+        //adapter = new ArrayAdapter<Claim>(this, R.layout.activity_main, listofClaims);
+        //clickClaimListItem();
     }
 
 
@@ -58,9 +71,9 @@ public class MainActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
     
-    public void editClaim(MenuItem menu) {
-    	Toast.makeText(this, "Edit Claim", Toast.LENGTH_SHORT).show();
-    	Intent intent = new Intent(MainActivity.this, ListItemsActivity.class);
+    public void addaClaim(MenuItem menu) {
+    	Toast.makeText(this, "Add Claim", Toast.LENGTH_SHORT).show();
+    	Intent intent = new Intent(MainActivity.this, AddClaimActivity.class);
     	startActivity(intent);
     	
     }
@@ -69,13 +82,25 @@ public class MainActivity extends Activity {
     	Toast.makeText(this, "Email Claim", Toast.LENGTH_SHORT).show();
     	
     }
-    
-    public void addClaimAction(View v) {
-    	Toast.makeText(this, "Add Claim", Toast.LENGTH_SHORT).show();	
-    	ClaimListController claim = new ClaimListController();
-    	EditText textView = (EditText) findViewById(R.id.addClaimNameText);
-    	claim.addClaim(new Claim(textView.getText().toString()));
-    	
-    	
+    /*
+    private void clickClaimListItem() {
+    	ListView claimListViewItem = (ListView) findViewById(R.id.claimListView);
+    	claimListViewItem.setAdapter(adapter);
+    	claimListViewItem.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+			
+			public void onClick(View v) {
+				Toast.makeText(MainActivity.this, "Clicked Claim", Toast.LENGTH_SHORT).show();
+				
+			}
+
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view,
+					int position, long id) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
+        
     }
+	*/
 }
