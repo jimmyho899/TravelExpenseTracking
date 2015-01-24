@@ -5,13 +5,13 @@ import java.util.ArrayList;
 
 public class ClaimList {
 
-	protected static ArrayList<Claim> claimList;
+	protected ArrayList<Claim> claimList = null;
 
 	public ClaimList(){	
 		claimList = new ArrayList<Claim>();
 	}
 	
-	public static ArrayList<Claim> getClaims() {
+	public ArrayList<Claim> getClaims() {
 		return claimList;
 	}
 
@@ -31,6 +31,15 @@ public class ClaimList {
 		return claimList.contains(testClaim);
 	}
 	
+	public Claim chooseClaim() throws EmptyClaimListException {
+		int size = claimList.size();
+		if (size <= 0) {
+			throw new EmptyClaimListException();
+		}
+		
+		int index = 0;
+		return claimList.get(index);
+	}
 	
 
 }

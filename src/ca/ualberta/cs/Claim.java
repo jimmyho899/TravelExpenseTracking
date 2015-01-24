@@ -2,7 +2,7 @@ package ca.ualberta.cs;
 
 public class Claim {
 	
-	protected static String claimName;
+	protected String claimName;
 	/*
 	private int startyear;
 	private int startmonth; 
@@ -13,7 +13,7 @@ public class Claim {
 	*/
 
 	public Claim(String claimName) {
-		Claim.claimName = claimName;
+		this.claimName = claimName;
 		/*
 		this.startyear = startyear;
 		this.startmonth = startmonth;
@@ -24,9 +24,12 @@ public class Claim {
 		*/
 	}
 
-	public static String getName() {
-		return claimName;
+	public String getName() {
+		return this.claimName;
 	}
 	
+	public String toString() {
+		return getName();
+	}
 	
 }
