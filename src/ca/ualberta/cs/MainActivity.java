@@ -21,6 +21,7 @@
 package ca.ualberta.cs;
 
 import java.util.ArrayList;
+import java.util.Collection;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -29,29 +30,55 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.ArrayAdapter;
-import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
 
 public class MainActivity extends Activity {
-	
-	private ArrayList<Claim> listofClaims = new ArrayList<Claim>();
-	
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        
-        
-        
-        //adapter = new ArrayAdapter<Claim>(this, R.layout.activity_main, listofClaims);
-        //clickClaimListItem();
+        loadListView();
     }
 
-
+	private void loadListView() {
+        // update our list view to contain items in our list so that it shows on screen
+        ListView listView = (ListView) findViewById(R.id.claimListView);
+        Collection<Claim> claims = ClaimListController.getClaimList().getClaims();
+        // not going to change after b/c it is final
+        final ArrayList<Claim> list = new ArrayList<Claim>(claims);
+        final ArrayAdapter<Claim> claimAdapter = new ArrayAdapter<Claim>(this, 
+        		android.R.layout.simple_list_item_1, list);
+        listView.setAdapter(claimAdapter);
+        
+        // now we will update so that our adapter knows that it needs to display new items
+        // observer pattern. whenever claim list changes we update
+        ClaimListController.getClaimList().addListener(new Listener() {
+        	public void update() {
+        		list.clear();
+        		Collection<Claim> claims = ClaimListController.getClaimList().getClaims();
+        		list.addAll(claims);
+        		claimAdapter.notifyDataSetChanged();
+        	}
+        });
+        
+        // now we want an option to delete the claim on the list
+        // we will delete a claim if the user holds on a claim
+        listView.setOnItemLongClickListener(new OnItemLongClickListener() {
+			@Override
+			public boolean onItemLongClick(AdapterView<?> adapterView, View view, int position, long id) {
+				Toast.makeText(MainActivity.this, "Deleted " + list.get(position), Toast.LENGTH_SHORT).show();
+				Claim claim = list.get(position);
+				ClaimListController.getClaimList().deleteClaim(claim);
+				return false;
+			}
+        });
+	}
+	
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -71,36 +98,17 @@ public class MainActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
     
+    // our add claim from our menu drop
     public void addaClaim(MenuItem menu) {
     	Toast.makeText(this, "Add Claim", Toast.LENGTH_SHORT).show();
+    	// make an intent which will then go to our AddClaimActivity class
     	Intent intent = new Intent(MainActivity.this, AddClaimActivity.class);
     	startActivity(intent);
-    	
     }
     
     public void emailClaim(MenuItem menu) {
     	Toast.makeText(this, "Email Claim", Toast.LENGTH_SHORT).show();
     	
     }
-    /*
-    private void clickClaimListItem() {
-    	ListView claimListViewItem = (ListView) findViewById(R.id.claimListView);
-    	claimListViewItem.setAdapter(adapter);
-    	claimListViewItem.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-			
-			public void onClick(View v) {
-				Toast.makeText(MainActivity.this, "Clicked Claim", Toast.LENGTH_SHORT).show();
-				
-			}
 
-			@Override
-			public void onItemClick(AdapterView<?> parent, View view,
-					int position, long id) {
-				// TODO Auto-generated method stub
-				
-			}
-		});
-        
-    }
-	*/
 }

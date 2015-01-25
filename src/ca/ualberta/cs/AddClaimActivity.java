@@ -10,13 +10,13 @@ import android.widget.Toast;
 
 
 public class AddClaimActivity extends Activity {
-
-	
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		// set up our add_claim ui screen
 		setContentView(R.layout.add_claim);
+		
 	}
 
 	@Override
@@ -40,7 +40,10 @@ public class AddClaimActivity extends Activity {
 	
 	// on click of the done button in add_claim
 	public void doneClaimAction(View v) {
-		Toast.makeText(this,  "Done added claim!",  Toast.LENGTH_SHORT).show();
+		// Test text "Added claim!"
+		Toast.makeText(this, "Added claim!", Toast.LENGTH_SHORT).show();
+		
+		// initialize a ClaimListController where we can then 
 		ClaimListController cl = new ClaimListController();
 		
 		// extract our name of the claim from the edit text and add it to our claim list
