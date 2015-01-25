@@ -24,6 +24,9 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -67,16 +70,29 @@ public class MainActivity extends Activity {
         });
         
         // now we want an option to delete the claim on the list
-        // we will delete a claim if the user holds on a claim
+        // we will delete a claim with prompt user if the user holds on a claim
+        // based on Abram Hindle Student Picker https://www.youtube.com/watch?v=7zKCuqScaRE
         listView.setOnItemLongClickListener(new OnItemLongClickListener() {
 			@Override
 			public boolean onItemLongClick(AdapterView<?> adapterView, View view, int position, long id) {
-				Toast.makeText(MainActivity.this, "Deleted " + list.get(position), Toast.LENGTH_SHORT).show();
-				Claim claim = list.get(position);
-				ClaimListController.getClaimList().deleteClaim(claim);
+				AlertDialog.Builder adb = new AlertDialog.Builder(MainActivity.this);
+				adb.setMessage("Delete "+list.get(position).toString()+"?");
+				adb.setCancelable(true);
+				final int finalPosition = position;
+				adb.setPositiveButton("Yes", new OnClickListener() {
+					public void onClick(DialogInterface dialog, int which) {
+						Claim claim = list.get(finalPosition);
+						ClaimListController.getClaimList().deleteClaim(claim);
+					}
+				});
+				adb.setNegativeButton("No", new OnClickListener() {
+					public void onClick (DialogInterface dialog, int which) {
+					}
+				});
+				adb.show();
 				return false;
 			}
-        });
+        }); 
 	}
 	
     @Override
