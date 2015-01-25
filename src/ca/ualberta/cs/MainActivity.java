@@ -33,6 +33,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -74,25 +75,53 @@ public class MainActivity extends Activity {
         // based on Abram Hindle Student Picker https://www.youtube.com/watch?v=7zKCuqScaRE
         listView.setOnItemLongClickListener(new OnItemLongClickListener() {
 			@Override
-			public boolean onItemLongClick(AdapterView<?> adapterView, View view, int position, long id) {
+			public boolean onItemLongClick(AdapterView<?> adapterView, View view, 
+					final int position, long id) {
 				AlertDialog.Builder adb = new AlertDialog.Builder(MainActivity.this);
-				adb.setMessage("Delete "+list.get(position).toString()+"?");
+				adb.setMessage("Edit/Delete "+list.get(position).toString()+"?");
 				adb.setCancelable(true);
 				final int finalPosition = position;
-				adb.setPositiveButton("Yes", new OnClickListener() {
+				adb.setPositiveButton("Delete", new OnClickListener() {
 					public void onClick(DialogInterface dialog, int which) {
-						Claim claim = list.get(finalPosition);
-						ClaimListController.getClaimList().deleteClaim(claim);
+						AlertDialog.Builder adb2 = new AlertDialog.Builder(MainActivity.this);
+						adb2.setMessage("Delete "+list.get(position).toString()+"?");
+						adb2.setCancelable(true);
+						final int finalPosition = position;
+						adb2.setPositiveButton("Yes", new OnClickListener() {
+							public void onClick(DialogInterface dialog, int which) {
+								Claim claim = list.get(finalPosition);
+								ClaimListController.getClaimList().deleteClaim(claim);
+							}
+						});
+						adb2.setNegativeButton("No", new OnClickListener() {
+							public void onClick (DialogInterface dialog, int which) {
+							}
+						});
+						adb2.show();
 					}
 				});
-				adb.setNegativeButton("No", new OnClickListener() {
+				adb.setNegativeButton("Edit", new OnClickListener() {
 					public void onClick (DialogInterface dialog, int which) {
+						Intent intent = new Intent(MainActivity.this, AddClaimActivity.class);
+				    	startActivity(intent);
 					}
 				});
 				adb.show();
 				return false;
 			}
         }); 
+        
+        // now we want to be able to click a claim to go to a list of items
+        listView.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> adapterView, View view,
+					int position, long id) {
+				Intent intent = new Intent(MainActivity.this, ListItemsActivity.class);
+				startActivity(intent);
+			}
+        	
+        });
 	}
 	
     @Override
