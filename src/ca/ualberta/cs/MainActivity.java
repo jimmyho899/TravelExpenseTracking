@@ -36,6 +36,7 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -77,6 +78,7 @@ public class MainActivity extends Activity {
 			@Override
 			public boolean onItemLongClick(AdapterView<?> adapterView, View view, 
 					final int position, long id) {
+				// create a message when the user long clicks
 				AlertDialog.Builder adb = new AlertDialog.Builder(MainActivity.this);
 				adb.setMessage("Edit/Delete "+list.get(position).toString()+"?");
 				adb.setCancelable(true);
@@ -102,8 +104,12 @@ public class MainActivity extends Activity {
 				});
 				adb.setNegativeButton("Edit", new OnClickListener() {
 					public void onClick (DialogInterface dialog, int which) {
+						AlertDialog.Builder adb3 = new AlertDialog.Builder(MainActivity.this);
+						adb3.setMessage("Editing " + list.get(position).toString());
+						adb3.show();
 						Intent intent = new Intent(MainActivity.this, EditClaimActivity.class);
-						//intent.putExtra("test",  )
+						//EditText textView = (EditText) findViewById(R.id.editnameOfClaim);
+						//textView.setText(list.get(position).toString());
 				    	startActivity(intent);
 					}
 				});

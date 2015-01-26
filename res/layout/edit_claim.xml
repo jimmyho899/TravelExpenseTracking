@@ -38,7 +38,7 @@
         android:layout_alignLeft="@+id/editdescriptionText"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:onClick="doneClaimAction"
+        android:onClick="doneEditClaimAction"
         android:text="Done" />
 
     <TextView
