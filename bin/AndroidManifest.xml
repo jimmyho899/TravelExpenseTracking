@@ -31,6 +31,7 @@
             android:name=".ListItemsActivity"
             android:label="@string/title_activity_list_items" >
         </activity>
+        <activity android:name=".EditClaimActivity"></activity>
     </application>
 
 </manifest>

@@ -32,4 +32,9 @@ public class Claim {
 		return getName();
 	}
 	
+	public String modifyName(String Name) {
+		this.claimName = Name;
+		return claimName;
+	}
+	
 }

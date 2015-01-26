@@ -102,7 +102,8 @@ public class MainActivity extends Activity {
 				});
 				adb.setNegativeButton("Edit", new OnClickListener() {
 					public void onClick (DialogInterface dialog, int which) {
-						Intent intent = new Intent(MainActivity.this, AddClaimActivity.class);
+						Intent intent = new Intent(MainActivity.this, EditClaimActivity.class);
+						//intent.putExtra("test",  )
 				    	startActivity(intent);
 					}
 				});
