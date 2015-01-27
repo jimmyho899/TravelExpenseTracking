@@ -23,6 +23,13 @@ public class ClaimListController {
 		getClaimList().addClaim(claim);
 		
 	}
+
+	// this is used to notify our listeners
+	public void edittedClaims() {
+		getClaimList().edittedClaim();
+		
+	}
 	
+
 	
 }

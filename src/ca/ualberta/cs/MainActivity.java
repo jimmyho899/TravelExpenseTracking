@@ -46,7 +46,11 @@ public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        
+        // load our layout activity_main which is a list view of claims
         setContentView(R.layout.activity_main);
+        
+        // we will now load our items from out list if there is any
         loadListView();
     }
 
@@ -83,37 +87,43 @@ public class MainActivity extends Activity {
 				adb.setMessage("Edit/Delete "+list.get(position).toString()+"?");
 				adb.setCancelable(true);
 				final int finalPosition = position;
+				
+				// now we set two options, one for edit and one for delete
 				adb.setPositiveButton("Delete", new OnClickListener() {
 					public void onClick(DialogInterface dialog, int which) {
+						
+						// now we set another two options, one to confirm the delete and another to deny
 						AlertDialog.Builder adb2 = new AlertDialog.Builder(MainActivity.this);
 						adb2.setMessage("Delete "+list.get(position).toString()+"?");
 						adb2.setCancelable(true);
 						final int finalPosition = position;
 						adb2.setPositiveButton("Yes", new OnClickListener() {
+							// if user presses yes, then we will delete that claim in the claim list
 							public void onClick(DialogInterface dialog, int which) {
 								Claim claim = list.get(finalPosition);
 								ClaimListController.getClaimList().deleteClaim(claim);
 							}
 						});
 						adb2.setNegativeButton("No", new OnClickListener() {
+							// if user presses no we will not delete it and do nothing
 							public void onClick (DialogInterface dialog, int which) {
 							}
 						});
+						// adb2.show in order to show our message of Delete Y/N?
 						adb2.show();
 					}
 				});
 				adb.setNegativeButton("Edit", new OnClickListener() {
 					public void onClick (DialogInterface dialog, int which) {
-						AlertDialog.Builder adb3 = new AlertDialog.Builder(MainActivity.this);
-						adb3.setMessage("Editing " + list.get(position).toString());
-						adb3.show();
+						// create a new intent to go to another class and layout 
 						Intent intent = new Intent(MainActivity.this, EditClaimActivity.class);
-						//EditText textView = (EditText) findViewById(R.id.editnameOfClaim);
-						//textView.setText(list.get(position).toString());
-						ClaimPosition test = new ClaimPosition(position);
+						// set position is what will be used to let other classes know which position
+						// in the list view that the item was pressed on
+						ClaimPosition setposition = new ClaimPosition(position);
 				    	startActivity(intent);
 					}
 				});
+				// adb.show() to show our edit/delete option message
 				adb.show();
 				return false;
 			}
@@ -125,6 +135,7 @@ public class MainActivity extends Activity {
 			@Override
 			public void onItemClick(AdapterView<?> adapterView, View view,
 					int position, long id) {
+				// create an intent to go to our list of expenses/items in that claim
 				Intent intent = new Intent(MainActivity.this, ListItemsActivity.class);
 				startActivity(intent);
 			}
