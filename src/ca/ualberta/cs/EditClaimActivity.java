@@ -28,6 +28,7 @@ public class EditClaimActivity extends Activity {
 		Toast.makeText(this, "Updated claim!", Toast.LENGTH_SHORT).show();
 		
 		
+		
 	}
 
 	
