@@ -110,6 +110,7 @@ public class MainActivity extends Activity {
 						Intent intent = new Intent(MainActivity.this, EditClaimActivity.class);
 						//EditText textView = (EditText) findViewById(R.id.editnameOfClaim);
 						//textView.setText(list.get(position).toString());
+						ClaimPosition test = new ClaimPosition(position);
 				    	startActivity(intent);
 					}
 				});

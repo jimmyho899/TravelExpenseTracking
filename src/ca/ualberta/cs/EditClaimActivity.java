@@ -20,7 +20,8 @@ public class EditClaimActivity extends Activity {
 		ArrayList<Claim> list = new ArrayList<Claim>(claims);
 		EditText textView = (EditText) findViewById(R.id.editnameOfClaim);
 		// need some way to get the position from the MainActivity. currently set at 0
-		textView.setText(list.get(0).toString());
+		int test = ClaimPosition.getPosition();
+		textView.setText(list.get(test).toString());
 		
 	}
 	
