@@ -1,9 +1,11 @@
 package ca.ualberta.cs;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 public class ListItemsActivity extends Activity {
 
@@ -30,5 +32,12 @@ public class ListItemsActivity extends Activity {
 			return true;
 		}
 		return super.onOptionsItemSelected(item);
+	}
+	
+	public void addExpenseItem(MenuItem menu) {
+		Toast.makeText(this, "Add Expense Item", Toast.LENGTH_SHORT).show();
+		// we want to now change screens so that we can add an expense item
+		Intent intent = new Intent(ListItemsActivity.this, AddItemActivity.class);
+    	startActivity(intent);
 	}
 }

@@ -14,20 +14,19 @@ public class ClaimListController {
 		return claimList;
 	}
 	
+	// 
 	public Claim chooseClaim() throws EmptyClaimListException {
 		return getClaimList().chooseClaim();
-		
 	}
 	
+	// this adds a claim to our claim list
 	public void addClaim(Claim claim) {
 		getClaimList().addClaim(claim);
-		
 	}
 
 	// this is used to notify our listeners
 	public void edittedClaims() {
 		getClaimList().edittedClaim();
-		
 	}
 	
 

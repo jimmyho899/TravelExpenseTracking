@@ -27,7 +27,8 @@ public final class R {
     public static final class id {
         public static final int ItemListView=0x7f080012;
         public static final int action_settings=0x7f080013;
-        public static final int addClaimItem=0x7f080014;
+        public static final int addClaimItem=0x7f080015;
+        public static final int addExpenseItem=0x7f080014;
         public static final int category_spinner=0x7f08000b;
         public static final int claimListView=0x7f080000;
         public static final int costText=0x7f080009;
@@ -41,7 +42,7 @@ public final class R {
         public static final int editnameOfClaim=0x7f08000c;
         public static final int editstartDate=0x7f080010;
         public static final int edittoDate=0x7f08000f;
-        public static final int emailClaimItem=0x7f080015;
+        public static final int emailClaimItem=0x7f080016;
         public static final int endDate=0x7f080004;
         public static final int nameOfClaim=0x7f080002;
         public static final int startDate=0x7f080003;
@@ -67,6 +68,9 @@ public final class R {
         public static final int app_name=0x7f050000;
         public static final int hello_world=0x7f050001;
         public static final int title_activity_list_items=0x7f050003;
+        public static final int title_add_claim_item=0x7f050005;
+        public static final int title_add_expense_item=0x7f050007;
+        public static final int title_edit_claim_item=0x7f050006;
     }
     public static final class style {
         /** 

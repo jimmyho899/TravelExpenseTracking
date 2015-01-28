@@ -22,6 +22,8 @@ package ca.ualberta.cs;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -58,6 +60,7 @@ public class MainActivity extends Activity {
         // update our list view to contain items in our list so that it shows on screen
         ListView listView = (ListView) findViewById(R.id.claimListView);
         Collection<Claim> claims = ClaimListController.getClaimList().getClaims();
+      
         // not going to change after b/c it is final
         final ArrayList<Claim> list = new ArrayList<Claim>(claims);
         final ArrayAdapter<Claim> claimAdapter = new ArrayAdapter<Claim>(this, 
@@ -86,7 +89,6 @@ public class MainActivity extends Activity {
 				AlertDialog.Builder adb = new AlertDialog.Builder(MainActivity.this);
 				adb.setMessage("Edit/Delete "+list.get(position).toString()+"?");
 				adb.setCancelable(true);
-				final int finalPosition = position;
 				
 				// now we set two options, one for edit and one for delete
 				adb.setPositiveButton("Delete", new OnClickListener() {
