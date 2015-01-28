@@ -9,5 +9,22 @@
     <string name="title_add_claim_item">Add Claim</string>
     <string name="title_edit_claim_item">Edit Claim</string>
     <string name="title_add_expense_item">Add Item</string>
+    <string name="done_button">Done</string>
+    <string-array name="Category_array">
+        <item >Air Fare</item>
+        <item >Ground Transportation</item>
+        <item >Vehicle Rental</item>
+        <item >Fuel</item>
+        <item >Parking</item>
+        <item >Registration</item>
+        <item >Accommodation</item>
+        <item >Meal</item>
+    </string-array>
+    <string-array name="Currency_array">
+        <item >CAD</item>
+        <item >USD</item>
+        <item >EUR</item>
+        <item >GBP</item>
+    </string-array>
 
 </resources>

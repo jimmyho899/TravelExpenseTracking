@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <Button
+        android:id="@+id/doneeditItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/edititemDescription"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/edititemDate"
+        android:layout_marginBottom="18dp"
+        android:onClick="doneeditItemAction"
+        android:text="@string/done_button" />
+
+    <EditText
+        android:id="@+id/editnameOfItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/edititemCost"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/edititemDate"
+        android:layout_marginTop="24dp"
+        android:ems="10" />
+
+    <Spinner
+        android:id="@+id/edititemCategory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/edititemCurrency"
+        android:layout_alignLeft="@+id/edititemDate"
+        android:layout_alignRight="@+id/edititemDate"
+        android:layout_marginBottom="53dp"
+        android:entries="@array/Category_array" />
+
+    <EditText
+        android:id="@+id/edititemDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/edititemCost"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/editnameOfItem"
+        android:layout_marginRight="27dp"
+        android:layout_marginTop="17dp"
+        android:ems="10"
+        android:inputType="date" />
+
+    <EditText
+        android:id="@+id/edititemDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/doneeditItem"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="32dp"
+        android:layout_marginLeft="21dp"
+        android:ems="10"
+        android:inputType="textMultiLine" />
+
+    <Spinner
+        android:id="@+id/edititemCurrency"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/edititemDescription"
+        android:layout_marginBottom="20dp"
+        android:layout_toRightOf="@+id/edititemCost"
+        android:entries="@array/Currency_array" />
+
+    <EditText
+        android:id="@+id/edititemCost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/edititemDescription"
+        android:layout_alignTop="@+id/edititemCurrency"
+        android:ems="10"
+        android:inputType="numberDecimal" >
+
+        <requestFocus />
+    </EditText>
+
+</RelativeLayout>

@@ -40,4 +40,6 @@ public class ListItemsActivity extends Activity {
 		Intent intent = new Intent(ListItemsActivity.this, AddItemActivity.class);
     	startActivity(intent);
 	}
+	
+	
 }
