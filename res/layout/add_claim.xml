@@ -57,7 +57,7 @@
         android:layout_alignParentBottom="true"
         android:layout_alignRight="@+id/nameOfClaim"
         android:onClick="doneClaimAction"
-        android:text="Done" />
+        android:text="@string/done_button" />
 
     <EditText
         android:id="@+id/descriptionText"

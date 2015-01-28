@@ -33,6 +33,11 @@ public class ClaimList {
 		notifyListeners();
 	}
 	
+	// update our listeners whenever we edit our claim
+	public void edittedClaim() {
+		notifyListeners();
+	}
+	
 	// return the size of the claim list
 	public int size(){	
 		return claimList.size();		

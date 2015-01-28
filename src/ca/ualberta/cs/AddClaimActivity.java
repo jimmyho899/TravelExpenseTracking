@@ -47,8 +47,12 @@ public class AddClaimActivity extends Activity {
 		ClaimListController cl = new ClaimListController();
 		
 		// extract our name of the claim from the edit text and add it to our claim list
-		EditText textView = (EditText) findViewById(R.id.nameOfClaim);
-		cl.addClaim(new Claim(textView.getText().toString()));
+		EditText nametextView = (EditText) findViewById(R.id.nameOfClaim);
+		EditText starttextView = (EditText) findViewById(R.id.startDate);
+		EditText endtextView = (EditText) findViewById(R.id.endDate);
+		EditText detailstextView = (EditText) findViewById(R.id.descriptionText);
+		cl.addClaim(new Claim(nametextView.getText().toString(), starttextView.getText().toString(), 
+				endtextView.getText().toString(), detailstextView.getText().toString()));
 		
 	}
 }
