@@ -38,7 +38,7 @@ public class ExpenseItemList {
 	}
 	
 	// return the size of the ExpenseItem list
-	public int size(){	
+	public int size() {	
 		return ExpenseItemList.size();		
 	}
 

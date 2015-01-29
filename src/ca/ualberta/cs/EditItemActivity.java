@@ -41,7 +41,7 @@ public class EditItemActivity extends Activity {
 		
 		// this code will get the position and then fill out the edit text with the old name
 		// the old start date, old end date, and old details
-		int setposition = ClaimPosition.getPosition();
+		int setposition = ItemPosition.getPosition();
 		nametextView.setText(list.get(setposition).toString());
 		// set a date format, the same as before
 		SimpleDateFormat fmt = new SimpleDateFormat("yyyy/mm/dd");
@@ -105,7 +105,12 @@ public class EditItemActivity extends Activity {
 				ExpenseItemListController eil = new ExpenseItemListController();
 				eil.edittedExpenseItem();
 				
+				// now we want to update our total currency list as well
+				Collection<TotalCurrency> total = TotalCurrencyController.getTotalCurrencyList().getTotalCurrency();
+				ArrayList<TotalCurrency> clist = new ArrayList<TotalCurrency>(total);
 				
+				clist.get(setposition).modifyCost(cost);
+				clist.get(setposition).modifyCurrency(Currency);
 			}
 		});
 	}

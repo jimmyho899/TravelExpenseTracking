@@ -16,7 +16,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
-import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView.OnItemLongClickListener;
 
 public class ListItemsActivity extends Activity {
@@ -75,6 +74,11 @@ public class ListItemsActivity extends Activity {
 							public void onClick(DialogInterface dialog, int which) {
 								ExpenseItem item = list.get(finalPosition);
 								ExpenseItemListController.getExpenseItemList().deleteExpenseItem(item);
+								// we also need to delete the entry from the total currency list
+								Collection<TotalCurrency> citems = TotalCurrencyController.getTotalCurrencyList().getTotalCurrency();
+								ArrayList<TotalCurrency> clist = new ArrayList<TotalCurrency>(citems);
+								TotalCurrency amount = clist.get(finalPosition);
+								TotalCurrencyController.getTotalCurrencyList().removeTotalCurrency(amount);
 							}
 						});
 						adb2.setNegativeButton("No", new OnClickListener() {
@@ -92,7 +96,7 @@ public class ListItemsActivity extends Activity {
 						Intent intent = new Intent(ListItemsActivity.this, EditItemActivity.class);
 						// set position is what will be used to let other classes know which position
 						// in the list view that the item was pressed on
-						ItemPosition setposition = new ItemPosition(position);
+						new ItemPosition(position);
 				    	startActivity(intent);
 					}
 				});
@@ -131,7 +135,9 @@ public class ListItemsActivity extends Activity {
 	
 	public void gotoSummary(MenuItem menu) {
 		Toast.makeText(this, "Summary of Claim", Toast.LENGTH_SHORT).show();
-		
+		// now we want to go to the summary activity 
+		Intent intent = new Intent(ListItemsActivity.this, SummaryActivity.class);
+		startActivity(intent);
 	}
 	
 	

@@ -3,7 +3,6 @@ package ca.ualberta.cs;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -12,6 +11,7 @@ import android.widget.Toast;
 
 public class AddItemActivity extends Activity {
 	
+	// call our spinners so we can reference them
 	public Spinner spinnerCategory;
 	public Spinner spinnerCurrency;
 
@@ -55,7 +55,13 @@ public class AddItemActivity extends Activity {
 				
 				// now we can add a new item into our list
 				eil.addExpenseItem(new ExpenseItem(nametextView.getText().toString(), datetextView.getText().toString(), Category, 
-						descriptiontextView.getText().toString(), Currency, cost));			
+						descriptiontextView.getText().toString(), Currency, cost));
+				
+				// we also want to add a cost and type of currency to our totalcurrency class
+				// first we call our TotalCurrencyController
+				TotalCurrencyController tcc = new TotalCurrencyController();
+				// now we add to it
+				tcc.addTotalCurrency(new TotalCurrency(cost, Currency));
 			}
 		});
 		}

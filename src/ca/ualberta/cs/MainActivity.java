@@ -22,9 +22,6 @@ package ca.ualberta.cs;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Collections;
-import java.util.Comparator;
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -38,7 +35,6 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.ArrayAdapter;
-import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -121,7 +117,7 @@ public class MainActivity extends Activity {
 						Intent intent = new Intent(MainActivity.this, EditClaimActivity.class);
 						// set position is what will be used to let other classes know which position
 						// in the list view that the item was pressed on
-						ClaimPosition setposition = new ClaimPosition(position);
+						new ClaimPosition(position);
 				    	startActivity(intent);
 					}
 				});
@@ -169,11 +165,6 @@ public class MainActivity extends Activity {
     	// make an intent which will then go to our AddClaimActivity class
     	Intent intent = new Intent(MainActivity.this, AddClaimActivity.class);
     	startActivity(intent);
-    }
-    
-    public void emailClaim(MenuItem menu) {
-    	Toast.makeText(this, "Email Claim", Toast.LENGTH_SHORT).show();
-    	
     }
 
 }

@@ -11,6 +11,8 @@
     <string name="title_add_expense_item">Add Item</string>
     <string name="done_button">Done</string>
     <string name="title_edit_expense_item">Edit Item</string>
+    <string name="title_summary">Summary</string>
+    <string name="email_claim">Email Claim</string>
 
     <string-array name="Category_array">
         <item>Air Fare</item>

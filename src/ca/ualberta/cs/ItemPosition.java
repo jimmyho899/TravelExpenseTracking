@@ -6,7 +6,7 @@ public class ItemPosition {
 	protected static int position;
 	
 	public ItemPosition(int position) {
-		this.position = position;
+		ItemPosition.position = position;
 	}
 	
 	public static int getPosition() {
