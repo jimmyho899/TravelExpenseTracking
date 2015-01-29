@@ -141,7 +141,6 @@ public class MainActivity extends Activity {
 				Intent intent = new Intent(MainActivity.this, ListItemsActivity.class);
 				startActivity(intent);
 			}
-        	
         });
 	}
 	

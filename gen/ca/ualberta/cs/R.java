@@ -31,7 +31,7 @@ public final class R {
     public static final class id {
         public static final int ItemListView=0x7f090020;
         public static final int action_settings=0x7f090021;
-        public static final int addClaimItem=0x7f090023;
+        public static final int addClaimItem=0x7f090024;
         public static final int addExpenseItem=0x7f090022;
         public static final int category_spinner=0x7f090012;
         public static final int claimListView=0x7f090000;
@@ -54,7 +54,7 @@ public final class R {
         public static final int editnameOfItem=0x7f09001c;
         public static final int editstartDate=0x7f090017;
         public static final int edittoDate=0x7f090016;
-        public static final int emailClaimItem=0x7f090024;
+        public static final int emailClaimItem=0x7f090025;
         public static final int endDate=0x7f090004;
         public static final int itemCategory=0x7f09000d;
         public static final int itemCost=0x7f09000b;
@@ -64,22 +64,25 @@ public final class R {
         public static final int nameOfClaim=0x7f090002;
         public static final int nameOfItem=0x7f090007;
         public static final int startDate=0x7f090003;
+        public static final int summary=0x7f090023;
         public static final int toDate=0x7f090001;
         public static final int typecurrency_spinner=0x7f090011;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
-        public static final int add_claim=0x7f030001;
-        public static final int add_item=0x7f030002;
-        public static final int details_items=0x7f030003;
-        public static final int edit_claim=0x7f030004;
-        public static final int edit_item=0x7f030005;
-        public static final int list_items=0x7f030006;
+        public static final int activity_summary=0x7f030001;
+        public static final int add_claim=0x7f030002;
+        public static final int add_item=0x7f030003;
+        public static final int details_items=0x7f030004;
+        public static final int edit_claim=0x7f030005;
+        public static final int edit_item=0x7f030006;
+        public static final int list_items=0x7f030007;
     }
     public static final class menu {
         public static final int add_claim=0x7f080000;
         public static final int list_items=0x7f080001;
         public static final int main=0x7f080002;
+        public static final int summary=0x7f080003;
     }
     public static final class string {
         public static final int action_settings=0x7f050002;
@@ -88,9 +91,11 @@ public final class R {
         public static final int done_button=0x7f050008;
         public static final int hello_world=0x7f050001;
         public static final int title_activity_list_items=0x7f050003;
+        public static final int title_activity_summary=0x7f05000a;
         public static final int title_add_claim_item=0x7f050005;
         public static final int title_add_expense_item=0x7f050007;
         public static final int title_edit_claim_item=0x7f050006;
+        public static final int title_edit_expense_item=0x7f050009;
     }
     public static final class style {
         /** 

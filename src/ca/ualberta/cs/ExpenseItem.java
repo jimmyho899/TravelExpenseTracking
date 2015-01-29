@@ -13,7 +13,7 @@ public class ExpenseItem {
 	protected String itemDescription;
 	protected String itemCurrency;
 	protected float itemCost;
-	SimpleDateFormat fmt = new SimpleDateFormat("dd/mm/yyyy");
+	SimpleDateFormat fmt = new SimpleDateFormat("yyyy/mm/dd");
 	
 	public ExpenseItem(String itemName, String itemDate, String itemCategory, 
 			String itemDescription, String itemCurrency, float itemCost) {
@@ -91,7 +91,7 @@ public class ExpenseItem {
 	}
 	
 	// allows us to change the start date of the item
-	public Date modifyStartDate(Date Date) {
+	public Date modifyDate(Date Date) {
 		this.itemDate = Date;
 		return itemDate;
 	}

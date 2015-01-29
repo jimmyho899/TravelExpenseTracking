@@ -24,20 +24,27 @@
         </activity>
         <activity
             android:name=".AddClaimActivity"
-            android:label="@string/title_add_claim_item">
-            
+            android:label="@string/title_add_claim_item" >
         </activity>
-        <activity 
+        <activity
             android:name=".AddItemActivity"
-            android:label="@string/title_add_expense_item">
+            android:label="@string/title_add_expense_item" >
         </activity>
         <activity
             android:name=".ListItemsActivity"
             android:label="@string/title_activity_list_items" >
         </activity>
-        <activity 
+        <activity
             android:name=".EditClaimActivity"
             android:label="@string/title_edit_claim_item" >
+        </activity>
+        <activity
+            android:name=".EditItemActivity"
+            android:label="@string/title_edit_expense_item" >
+        </activity>
+        <activity
+            android:name=".SummaryActivity"
+            android:label="@string/title_activity_summary" >
         </activity>
     </application>
 

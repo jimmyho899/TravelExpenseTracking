@@ -37,7 +37,7 @@ public class EditClaimActivity extends Activity {
 		int setposition = ClaimPosition.getPosition();
 		nametextView.setText(list.get(setposition).toString());
 		
-		SimpleDateFormat fmt = new SimpleDateFormat("dd/mm/yyyy");
+		SimpleDateFormat fmt = new SimpleDateFormat("yyyy/mm/dd");
 		starttextView.setText(fmt.format(list.get(setposition).toStartString()));
 		endtextView.setText(fmt.format(list.get(setposition).toEndString()));
 		detailstextView.setText(list.get(setposition).toDetailString());
@@ -68,7 +68,7 @@ public class EditClaimActivity extends Activity {
 				// start date, end date, and details if the user changes them
 				((Claim) list.get(setposition)).modifyName(nametextView.getText().toString());
 				
-				SimpleDateFormat fmt = new SimpleDateFormat("dd/mm/yyyy");
+				SimpleDateFormat fmt = new SimpleDateFormat("yyyy/mm/dd");
 				try {
 					((Claim) list.get(setposition)).modifyStartDate(fmt.parse(starttextView.getText().toString()));
 				} catch (ParseException e) {

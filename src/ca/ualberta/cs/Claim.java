@@ -12,7 +12,7 @@ public class Claim {
 	protected Date claimStartDate = new Date();
 	protected Date claimEndDate = new Date();
 	protected String claimDetails;
-	SimpleDateFormat fmt = new SimpleDateFormat("dd/mm/yyyy");
+	SimpleDateFormat fmt = new SimpleDateFormat("yyyy/mm/dd");
 	
 	// our constructor for Claim class
 	public Claim(String claimName, String claimStartDate, String claimEndDate, String claimDetails) {
