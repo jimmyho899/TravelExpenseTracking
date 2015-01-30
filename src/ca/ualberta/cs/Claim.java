@@ -4,7 +4,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class Claim {
+public class Claim implements Comparable<Claim> {
 	
 	// this class is the claim class which contains details about the claim
 	// more specifically the name, start, end, and additional details
@@ -94,5 +94,11 @@ public class Claim {
 	public String modifyClaimDetails(String Details) {
 		this.claimDetails = Details;
 		return claimDetails;
+	}
+
+	// allows us to sort our list so that we can have our list view in order of start date
+	// idea taken from http://stackoverflow.com/questions/5927109/sort-objects-in-arraylist-by-date
+	public int compareTo(Claim another) {
+		return getStartDate().compareTo(another.getStartDate());
 	}
 }

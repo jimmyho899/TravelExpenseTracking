@@ -31,4 +31,13 @@ public class TotalCurrencyList {
 		int index = 0;
 		return TotalCurrencyList.get(index);
 	}
+
+	public int size() {
+		return TotalCurrencyList.size();
+	}
+	
+	public TotalCurrency getItem(int i) {
+		return TotalCurrencyList.get(i);
+	}
+	
 }

@@ -24,7 +24,8 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
-        android:ems="10" />
+        android:ems="10"
+        android:hint="Name of Claim" />
 
     <EditText
         android:id="@+id/startDate"
@@ -34,6 +35,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="25dp"
         android:ems="10"
+        android:hint="YYYY/MM/DD"
         android:inputType="date" >
 
         <requestFocus />
@@ -47,6 +49,7 @@
         android:layout_below="@+id/toDate"
         android:layout_marginTop="14dp"
         android:ems="10"
+        android:hint="YYYY/MM/DD"
         android:inputType="date" />
 
     <Button
@@ -63,12 +66,13 @@
         android:id="@+id/descriptionText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/endDate"
         android:layout_above="@+id/doneButton"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
+        android:layout_below="@+id/endDate"
         android:layout_centerVertical="true"
         android:ems="10"
+        android:hint="Description"
         android:inputType="textMultiLine" />
 
 </RelativeLayout>

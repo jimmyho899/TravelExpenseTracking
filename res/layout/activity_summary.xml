@@ -5,16 +5,96 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
->
+    android:paddingTop="@dimen/activity_vertical_margin" >
+
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/totaltextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:text="Total Cost"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/costUSD"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="86dp"
-        android:layout_marginTop="64dp"
-        android:text="TextView" />
+        android:layout_below="@+id/costCAD"
+        android:layout_marginLeft="47dp"
+        android:layout_marginTop="18dp"
+        android:text="Medium Text"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/costCAD"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/costUSD"
+        android:layout_below="@+id/totaltextView"
+        android:layout_marginTop="17dp"
+        android:text="Medium Text"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/currencyCAD"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/costUSD"
+        android:layout_marginLeft="21dp"
+        android:layout_toRightOf="@+id/costCAD"
+        android:text="CAD"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/currencyUSD"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/costUSD"
+        android:layout_alignBottom="@+id/costUSD"
+        android:layout_alignLeft="@+id/currencyCAD"
+        android:text="USD"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/costEUR"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/costUSD"
+        android:layout_below="@+id/costUSD"
+        android:layout_marginTop="15dp"
+        android:text="Medium Text"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/currencyEUR"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/costGBP"
+        android:layout_alignLeft="@+id/currencyUSD"
+        android:text="EUR"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/costGBP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/costEUR"
+        android:layout_marginTop="18dp"
+        android:layout_toLeftOf="@+id/currencyCAD"
+        android:text="Medium Text"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/currencyGBP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/costGBP"
+        android:layout_alignBottom="@+id/costGBP"
+        android:layout_alignLeft="@+id/currencyEUR"
+        android:text="GBP"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
 
 </RelativeLayout>

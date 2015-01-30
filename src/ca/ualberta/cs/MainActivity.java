@@ -22,6 +22,8 @@ package ca.ualberta.cs;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -59,6 +61,8 @@ public class MainActivity extends Activity {
       
         // not going to change after b/c it is final
         final ArrayList<Claim> list = new ArrayList<Claim>(claims);
+        // this will sort our list in order of start dates
+        Collections.sort(list);
         final ArrayAdapter<Claim> claimAdapter = new ArrayAdapter<Claim>(this, 
         		android.R.layout.simple_list_item_1, list);
         listView.setAdapter(claimAdapter);
@@ -70,6 +74,8 @@ public class MainActivity extends Activity {
         		list.clear();
         		Collection<Claim> claims = ClaimListController.getClaimList().getClaims();
         		list.addAll(claims);
+        		// sort our list so that start date items are at the top
+        		Collections.sort(list);
         		claimAdapter.notifyDataSetChanged();
         	}
         });
