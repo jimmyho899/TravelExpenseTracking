@@ -1,5 +1,7 @@
 package ca.ualberta.cs;
 
+import java.util.ArrayList;
+
 public class ClaimListController {
 	
 	// 
@@ -28,7 +30,6 @@ public class ClaimListController {
 	public void edittedClaims() {
 		getClaimList().edittedClaim();
 	}
-	
 
 	
 }

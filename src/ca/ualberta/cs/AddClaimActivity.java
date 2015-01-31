@@ -34,7 +34,8 @@ public class AddClaimActivity extends Activity {
 				EditText endtextView = (EditText) findViewById(R.id.endDate);
 				EditText detailstextView = (EditText) findViewById(R.id.descriptionText);
 				cl.addClaim(new Claim(nametextView.getText().toString(), starttextView.getText().toString(), 
-						endtextView.getText().toString(), detailstextView.getText().toString()));			
+						endtextView.getText().toString(), detailstextView.getText().toString()));
+
 			}
 		});
 	}

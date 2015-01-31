@@ -5,23 +5,27 @@ import java.util.Collection;
 
 public class ExpenseItemList {
 	
-	protected ArrayList<ExpenseItem> ExpenseItemList = null;
-	protected ArrayList<Listener> listeners;
+	protected ArrayList<ExpenseItem> ExpenseItemList;
+	protected ArrayList<Listener> itemlisteners;
+	Collection<Claim> claims = ClaimListController.getClaimList().getClaims();
+	ArrayList<Claim> list = new ArrayList<Claim>(claims);
+	int setposition = ClaimPosition.getPosition();
 
 	public ExpenseItemList(){	
 		// create a new ExpenseItem list 
-		ExpenseItemList = new ArrayList<ExpenseItem>();
-		listeners = new ArrayList<Listener>();
+		//ExpenseItemList = new ArrayList<ExpenseItem>();
+		ExpenseItemList = list.get(setposition).toArrayList();
+		itemlisteners = new ArrayList<Listener>();
 	}
 	
 	public Collection<ExpenseItem> getExpenseItem() {
 		// return the collection of our ExpenseItems
-		return ExpenseItemList;
+		return list.get(setposition).toArrayList();
 	}
 
 	// add a ExpenseItem to our list of ExpenseItems
 	public void addExpenseItem(ExpenseItem testExpenseItem) {		
-		ExpenseItemList.add(testExpenseItem);	
+		list.get(setposition).toArrayList().add(testExpenseItem);	
 		// notify to update other things that we have new things
 		notifyListeners();
 	}
@@ -60,17 +64,17 @@ public class ExpenseItemList {
 	
 	// code below and on listeners taken from abram hindle tutorial video https://www.youtube.com/watch?v=7zKCuqScaRE
 	public void notifyListeners() {
-		for (Listener listener: listeners) {
+		for (Listener listener: itemlisteners) {
 			listener.update();
 		}
 	}
 	
 	public void addListener(Listener l) {
-		listeners.add(l);
+		itemlisteners.add(l);
 	}
 	
 	public void removeListener (Listener l) {
-		listeners.remove(l);
+		itemlisteners.remove(l);
 	}
 	
 }

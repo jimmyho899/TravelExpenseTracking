@@ -28,7 +28,7 @@ public class AddItemActivity extends Activity {
 				// Test text "Added Item!"
 				Toast.makeText(AddItemActivity.this, "Added Item!", Toast.LENGTH_SHORT).show();
 				
-				// initialize a ExpenseItemListController where we can then 
+				// initialize a ExpenseItemListController where we can then add things 
 				ExpenseItemListController eil = new ExpenseItemListController();
 				
 				// extract our name of the claim from the edit text and add it to our claim list

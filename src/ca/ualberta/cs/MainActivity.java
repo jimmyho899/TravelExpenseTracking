@@ -140,6 +140,7 @@ public class MainActivity extends Activity {
 			public void onItemClick(AdapterView<?> adapterView, View view,
 					int position, long id) {
 				// create an intent to go to our list of expenses/items in that claim
+				new ClaimPosition(position);
 				Intent intent = new Intent(MainActivity.this, ListItemsActivity.class);
 				startActivity(intent);
 			}

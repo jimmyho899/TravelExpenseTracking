@@ -2,6 +2,7 @@ package ca.ualberta.cs;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 
 public class Claim implements Comparable<Claim> {
@@ -13,6 +14,8 @@ public class Claim implements Comparable<Claim> {
 	protected Date claimEndDate = new Date();
 	protected String claimDetails;
 	SimpleDateFormat fmt = new SimpleDateFormat("yyyy/mm/dd");
+	protected ArrayList<ExpenseItem> listofitems;
+	protected String claimStatus;
 	
 	// our constructor for Claim class
 	public Claim(String claimName, String claimStartDate, String claimEndDate, String claimDetails) {
@@ -30,6 +33,15 @@ public class Claim implements Comparable<Claim> {
 			e.printStackTrace();
 		}
 		this.claimDetails = claimDetails;
+		this.listofitems = new ArrayList<ExpenseItem>();
+	}
+	
+	public ArrayList<ExpenseItem> getItemArray() {
+		return this.listofitems;
+	}
+	
+	public ArrayList<ExpenseItem> toArrayList() {
+		return getItemArray();
 	}
 
 	// returns the claim name

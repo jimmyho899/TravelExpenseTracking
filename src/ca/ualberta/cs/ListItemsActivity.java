@@ -34,8 +34,16 @@ public class ListItemsActivity extends Activity {
         ListView listView = (ListView) findViewById(R.id.ItemListView);
         Collection<ExpenseItem> items = ExpenseItemListController.getExpenseItemList().getExpenseItem();
       
+        int setposition = ClaimPosition.getPosition();
+        Collection<Claim> claims = ClaimListController.getClaimList().getClaims();
+		ArrayList<Claim> alist = new ArrayList<Claim>(claims);
+		
         // not going to change after b/c it is final
-        final ArrayList<ExpenseItem> list = new ArrayList<ExpenseItem>(items);
+        final ArrayList<ExpenseItem> list = alist.get(setposition).toArrayList();
+        
+        if (list.size() == 0)
+        	Toast.makeText(ListItemsActivity.this, "EMPTY LIST! for " + alist.get(setposition).toString(), Toast.LENGTH_SHORT).show();
+        
         final ArrayAdapter<ExpenseItem> itemAdapter = new ArrayAdapter<ExpenseItem>(this, 
         		android.R.layout.simple_list_item_1, list);
         listView.setAdapter(itemAdapter);
