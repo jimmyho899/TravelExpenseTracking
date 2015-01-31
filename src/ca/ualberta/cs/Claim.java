@@ -18,6 +18,9 @@ public class Claim implements Comparable<Claim> {
 	protected String claimStatus;
 	ExpenseItemListController controller;
 	ExpenseItemList list;
+	protected ArrayList<TotalCurrency> TotalCurrencyList;
+	TotalCurrencyList currencylist;
+	TotalCurrencyController currencycontroller;
 	
 	// our constructor for Claim class
 	public Claim(String claimName, String claimStartDate, String claimEndDate, String claimDetails) {
@@ -38,6 +41,9 @@ public class Claim implements Comparable<Claim> {
 		this.ExpenseItemList = new ArrayList<ExpenseItem>();
 		this.controller  = new ExpenseItemListController();
 		this.list = new ExpenseItemList();
+		this.TotalCurrencyList = new ArrayList<TotalCurrency>();
+		this.currencylist = new TotalCurrencyList();
+		this.currencycontroller = new TotalCurrencyController();
 	}
 	
 	public ArrayList<ExpenseItem> getItemArray() {
@@ -55,7 +61,6 @@ public class Claim implements Comparable<Claim> {
 	public ExpenseItemList getlist() {
 		return this.list;
 	}
-	
 	
 	
 	

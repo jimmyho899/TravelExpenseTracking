@@ -32,7 +32,10 @@ public class AddItemActivity extends Activity {
 				Toast.makeText(AddItemActivity.this, "Added Item!", Toast.LENGTH_SHORT).show();
 				
 				// initialize a ExpenseItemListController where we can then add things 
-				ExpenseItemListController eil = new ExpenseItemListController();
+		        int setposition = ClaimPosition.getPosition();
+		        Collection<Claim> claims = ClaimListController.getClaimList().getClaims();
+				ArrayList<Claim> alist = new ArrayList<Claim>(claims);
+				ExpenseItemListController eil = alist.get(setposition).getController();
 				
 				// extract our name of the claim from the edit text and add it to our claim list
 				EditText nametextView = (EditText) findViewById(R.id.nameOfItem);
@@ -57,13 +60,6 @@ public class AddItemActivity extends Activity {
 				}
 				
 				// now we can add a new item into our list
-				/*
-				Collection<Claim> claims = ClaimListController.getClaimList().getClaims();
-				ArrayList<Claim> list = new ArrayList<Claim>(claims);
-				int setposition = ClaimPosition.getPosition();
-				list.get(setposition).toArrayList().add(new ExpenseItem(nametextView.getText().toString(), datetextView.getText().toString(), Category, 
-						descriptiontextView.getText().toString(), Currency, cost));
-				*/
 				eil.addExpenseItem(new ExpenseItem(nametextView.getText().toString(), datetextView.getText().toString(), Category, 
 						descriptiontextView.getText().toString(), Currency, cost));
 				

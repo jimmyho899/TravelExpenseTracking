@@ -25,6 +25,10 @@ public class EditItemActivity extends Activity {
 		setContentView(R.layout.edit_item);
 		
 		// call our ExpenseItem list of ExpenseItems with items and list
+        int position = ClaimPosition.getPosition();
+        Collection<Claim> claims = ClaimListController.getClaimList().getClaims();
+		ArrayList<Claim> alist = new ArrayList<Claim>(claims);
+		alist.get(position).getController();
 		Collection<ExpenseItem> items = ExpenseItemListController.getExpenseItemList().getExpenseItem();
 		ArrayList<ExpenseItem> list = new ArrayList<ExpenseItem>(items);
 		
