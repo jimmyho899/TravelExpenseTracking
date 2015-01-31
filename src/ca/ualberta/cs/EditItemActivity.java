@@ -28,8 +28,8 @@ public class EditItemActivity extends Activity {
         int position = ClaimPosition.getPosition();
         Collection<Claim> claims = ClaimListController.getClaimList().getClaims();
 		ArrayList<Claim> alist = new ArrayList<Claim>(claims);
-		alist.get(position).getController();
-		Collection<ExpenseItem> items = ExpenseItemListController.getExpenseItemList().getExpenseItem();
+		
+		Collection<ExpenseItem> items = alist.get(position).getController().getExpenseItemList().getExpenseItem();
 		ArrayList<ExpenseItem> list = new ArrayList<ExpenseItem>(items);
 		
 		// get the id of our name edit text that we will update with a new name
@@ -82,16 +82,16 @@ public class EditItemActivity extends Activity {
 					cost = Float.valueOf(costtextView.getText().toString());
 				}
 				
+				// call our position from our ItemPosition class
+				int setposition = ItemPosition.getPosition();
+				
 				// call our Expense item list so that we can update items on it
 				Collection<Claim> claims = ClaimListController.getClaimList().getClaims();
 				ArrayList<Claim> alist = new ArrayList<Claim>(claims);
 				int position = ClaimPosition.getPosition();
 				
 				Collection<ExpenseItem> items = ExpenseItemListController.getExpenseItemList().getExpenseItem();
-				ArrayList<ExpenseItem> list = new ArrayList<ExpenseItem>(items);
-				
-				// call our position from our ItemPosition class
-				int setposition = ItemPosition.getPosition();
+				ArrayList<ExpenseItem> list = alist.get(position).getItemArray();
 				
 				// now we use our modifyName method in the ExpenseItem class
 				// this will change the already existing information with new ones using our modify methods
