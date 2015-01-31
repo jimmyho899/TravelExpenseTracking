@@ -1,5 +1,8 @@
 package ca.ualberta.cs;
 
+import java.util.ArrayList;
+import java.util.Collection;
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -54,6 +57,13 @@ public class AddItemActivity extends Activity {
 				}
 				
 				// now we can add a new item into our list
+				/*
+				Collection<Claim> claims = ClaimListController.getClaimList().getClaims();
+				ArrayList<Claim> list = new ArrayList<Claim>(claims);
+				int setposition = ClaimPosition.getPosition();
+				list.get(setposition).toArrayList().add(new ExpenseItem(nametextView.getText().toString(), datetextView.getText().toString(), Category, 
+						descriptiontextView.getText().toString(), Currency, cost));
+				*/
 				eil.addExpenseItem(new ExpenseItem(nametextView.getText().toString(), datetextView.getText().toString(), Category, 
 						descriptiontextView.getText().toString(), Currency, cost));
 				

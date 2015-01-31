@@ -14,8 +14,10 @@ public class Claim implements Comparable<Claim> {
 	protected Date claimEndDate = new Date();
 	protected String claimDetails;
 	SimpleDateFormat fmt = new SimpleDateFormat("yyyy/mm/dd");
-	protected ArrayList<ExpenseItem> listofitems;
+	protected ArrayList<ExpenseItem> ExpenseItemList;
 	protected String claimStatus;
+	ExpenseItemListController controller;
+	ExpenseItemList list;
 	
 	// our constructor for Claim class
 	public Claim(String claimName, String claimStartDate, String claimEndDate, String claimDetails) {
@@ -33,16 +35,30 @@ public class Claim implements Comparable<Claim> {
 			e.printStackTrace();
 		}
 		this.claimDetails = claimDetails;
-		this.listofitems = new ArrayList<ExpenseItem>();
+		this.ExpenseItemList = new ArrayList<ExpenseItem>();
+		this.controller  = new ExpenseItemListController();
+		this.list = new ExpenseItemList();
 	}
 	
 	public ArrayList<ExpenseItem> getItemArray() {
-		return this.listofitems;
+		return this.ExpenseItemList;
 	}
 	
 	public ArrayList<ExpenseItem> toArrayList() {
 		return getItemArray();
 	}
+	
+	public ExpenseItemListController getController() {
+		return this.controller;
+	}
+	
+	public ExpenseItemList getlist() {
+		return this.list;
+	}
+	
+	
+	
+	
 
 	// returns the claim name
 	public String getName() {

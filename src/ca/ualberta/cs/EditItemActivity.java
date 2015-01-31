@@ -79,6 +79,10 @@ public class EditItemActivity extends Activity {
 				}
 				
 				// call our Expense item list so that we can update items on it
+				Collection<Claim> claims = ClaimListController.getClaimList().getClaims();
+				ArrayList<Claim> alist = new ArrayList<Claim>(claims);
+				int position = ClaimPosition.getPosition();
+				
 				Collection<ExpenseItem> items = ExpenseItemListController.getExpenseItemList().getExpenseItem();
 				ArrayList<ExpenseItem> list = new ArrayList<ExpenseItem>(items);
 				

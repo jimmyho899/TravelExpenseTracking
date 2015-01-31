@@ -7,25 +7,22 @@ public class ExpenseItemList {
 	
 	protected ArrayList<ExpenseItem> ExpenseItemList;
 	protected ArrayList<Listener> itemlisteners;
-	Collection<Claim> claims = ClaimListController.getClaimList().getClaims();
-	ArrayList<Claim> list = new ArrayList<Claim>(claims);
-	int setposition = ClaimPosition.getPosition();
 
 	public ExpenseItemList(){	
 		// create a new ExpenseItem list 
 		//ExpenseItemList = new ArrayList<ExpenseItem>();
-		ExpenseItemList = list.get(setposition).toArrayList();
+		ExpenseItemList = new ArrayList<ExpenseItem>();
 		itemlisteners = new ArrayList<Listener>();
 	}
 	
 	public Collection<ExpenseItem> getExpenseItem() {
 		// return the collection of our ExpenseItems
-		return list.get(setposition).toArrayList();
+		return ExpenseItemList;
 	}
 
 	// add a ExpenseItem to our list of ExpenseItems
 	public void addExpenseItem(ExpenseItem testExpenseItem) {		
-		list.get(setposition).toArrayList().add(testExpenseItem);	
+		ExpenseItemList.add(testExpenseItem);	
 		// notify to update other things that we have new things
 		notifyListeners();
 	}

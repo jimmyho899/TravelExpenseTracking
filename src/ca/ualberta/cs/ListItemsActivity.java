@@ -39,7 +39,7 @@ public class ListItemsActivity extends Activity {
 		ArrayList<Claim> alist = new ArrayList<Claim>(claims);
 		
         // not going to change after b/c it is final
-        final ArrayList<ExpenseItem> list = alist.get(setposition).toArrayList();
+        final ArrayList<ExpenseItem> list = alist.get(setposition).getItemArray();
         
         if (list.size() == 0)
         	Toast.makeText(ListItemsActivity.this, "EMPTY LIST! for " + alist.get(setposition).toString(), Toast.LENGTH_SHORT).show();
