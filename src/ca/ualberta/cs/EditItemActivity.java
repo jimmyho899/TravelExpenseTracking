@@ -114,7 +114,8 @@ public class EditItemActivity extends Activity {
 				eil.edittedExpenseItem();
 				
 				// now we want to update our total currency list as well
-				Collection<TotalCurrency> total = TotalCurrencyController.getTotalCurrencyList().getTotalCurrency();
+				
+				Collection<TotalCurrency> total = alist.get(position).getCurrencyController().getTotalCurrencyList().getTotalCurrency();
 				ArrayList<TotalCurrency> clist = new ArrayList<TotalCurrency>(total);
 				
 				clist.get(setposition).modifyCost(cost);

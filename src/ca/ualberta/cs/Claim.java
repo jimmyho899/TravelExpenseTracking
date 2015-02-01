@@ -19,7 +19,7 @@ public class Claim implements Comparable<Claim> {
 	ExpenseItemListController controller;
 	ExpenseItemList list;
 	protected ArrayList<TotalCurrency> TotalCurrencyList;
-	TotalCurrencyList currencylist;
+	TotalCurrencyList currencyList;
 	TotalCurrencyController currencycontroller;
 	
 	// our constructor for Claim class
@@ -42,7 +42,7 @@ public class Claim implements Comparable<Claim> {
 		this.controller  = new ExpenseItemListController();
 		this.list = new ExpenseItemList();
 		this.TotalCurrencyList = new ArrayList<TotalCurrency>();
-		this.currencylist = new TotalCurrencyList();
+		this.currencyList = new TotalCurrencyList();
 		this.currencycontroller = new TotalCurrencyController();
 	}
 	
@@ -61,6 +61,19 @@ public class Claim implements Comparable<Claim> {
 	public ExpenseItemList getlist() {
 		return this.list;
 	}
+	
+	public ca.ualberta.cs.TotalCurrencyList getCurrencyList() {
+		return this.currencyList;
+	}
+	
+	public ArrayList<TotalCurrency> getTotalCurrencyList() {
+		return this.TotalCurrencyList;
+	}
+	
+	public TotalCurrencyController getCurrencyController() {
+		return this.currencycontroller;
+	}
+	
 	
 	
 	

@@ -65,7 +65,7 @@ public class AddItemActivity extends Activity {
 				
 				// we also want to add a cost and type of currency to our totalcurrency class
 				// first we call our TotalCurrencyController
-				TotalCurrencyController tcc = new TotalCurrencyController();
+				TotalCurrencyController tcc = alist.get(setposition).getCurrencyController();
 				// now we add to it
 				tcc.addTotalCurrency(new TotalCurrency(cost, Currency));
 			}
