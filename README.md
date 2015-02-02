@@ -1,5 +1,7 @@
 # TravelExpenseTracking
+
 CMPUT 301 Assignment 1
+
 An app used to keep track of items bought on a trip.
 
 Video Demonstration: 
