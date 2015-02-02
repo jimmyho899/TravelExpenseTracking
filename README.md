@@ -2,6 +2,9 @@
 CMPUT 301 Assignment 1
 An app used to keep track of items bought on a trip.
 
+Video Demonstration: 
+https://www.youtube.com/watch?v=2oeZzwD-t4Q&feature=youtu.be
+
 REFERENCES:
 
 http://google-gson.googlecode.com/svn/trunk/gson/docs/javadocs/com/google/gson/Gson.html 1/30/2015
