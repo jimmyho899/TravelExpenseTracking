@@ -15,4 +15,5 @@ http://stackoverflow.com/questions/513832/how-do-i-compare-strings-in-java 1/27/
 http://stackoverflow.com/questions/5402637/displays-float-into-text-view 1/27/2015
 http://stackoverflow.com/questions/4670951/how-call-reference-textviewfindviewbyid-from-another-class 1/27/2015
 
-LICENSE: see LICENSE for more details
+LICENSE: GNU GENERAL PUBLIC LICENSE
+see LICENSE for more details
