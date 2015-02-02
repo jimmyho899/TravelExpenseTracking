@@ -20,9 +20,17 @@
 
 package ca.ualberta.cs;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -42,6 +50,12 @@ import android.widget.Toast;
 
 
 public class MainActivity extends Activity {
+	
+	private static final String FILENAME = "Claims.sav";
+	private ListView ClaimsList;
+	private ArrayList<Claim> claims;
+	private ListArrayAdapter adapter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,16 +63,45 @@ public class MainActivity extends Activity {
         
         // load our layout activity_main which is a list view of claims
         setContentView(R.layout.activity_main);
-        
-        // we will now load our items from out list if there is any
-        loadListView();
+
     }
+
+    // have loadListView in onStart instead of onCreate as it is safer
+    public void onStart() {
+    	
+    	super.onStart();
+    	loadListView();
+    	
+    }
+	private ArrayList<Claim> loadFromFile() {
+		Gson gson = new Gson();
+		ArrayList<Claim> claims = null;
+		try {
+			FileInputStream fis = openFileInput(FILENAME);
+			InputStreamReader isr = new InputStreamReader(fis);
+			
+			// http://google-gson.googlecode.com/svn/trunk/gson/docs/javadocs/com/google/gson/Gson.html
+			Type listType = new TypeToken<ArrayList<Claim>>() {}.getType();
+			claims = gson.fromJson(isr, listType);
+			fis.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		if(claims == null) {
+			claims = new ArrayList<Claim>();
+		}
+		
+		return claims;
+	}
 
 	private void loadListView() {
         // update our list view to contain items in our list so that it shows on screen
         ListView listView = (ListView) findViewById(R.id.claimListView);
         Collection<Claim> claims = ClaimListController.getClaimList().getClaims();
-      
+        // claims = loadFromFile();
+        
         // not going to change after b/c it is final
         final ArrayList<Claim> list = new ArrayList<Claim>(claims);
         // this will sort our list in order of start dates

@@ -2,10 +2,12 @@ package ca.ualberta.cs;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.io.Serializable;
 
 
-public class ClaimList {
+public class ClaimList implements Serializable {
 
+	private static final long serialVersionUID = 1155703775532352548L;
 	protected ArrayList<Claim> claimList = null;
 	protected ArrayList<Listener> listeners;
 

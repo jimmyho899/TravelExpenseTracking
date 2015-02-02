@@ -6,10 +6,29 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.Toast;
 
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.Date;
+import java.io.Serializable;
+
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 public class AddClaimActivity extends Activity {
+	
+	private static final String FILENAME = "Claims.sav";
+	private ArrayList<Claim> claims;
+	
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +54,21 @@ public class AddClaimActivity extends Activity {
 				EditText detailstextView = (EditText) findViewById(R.id.descriptionText);
 				cl.addClaim(new Claim(nametextView.getText().toString(), starttextView.getText().toString(), 
 						endtextView.getText().toString(), detailstextView.getText().toString()));
-
+				
+				claims = (ArrayList<Claim>) cl.getClaimList().getClaims();
+				// now we want to save our claim into a file
+				try {
+					Gson gson = new Gson();
+					FileOutputStream fos = openFileOutput(FILENAME, 0);
+					OutputStreamWriter osw = new OutputStreamWriter(fos);
+					gson.toJson(claims, osw);
+					osw.flush();
+					fos.close();
+				} catch (FileNotFoundException e) {
+					e.printStackTrace();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
 			}
 		});
 	}

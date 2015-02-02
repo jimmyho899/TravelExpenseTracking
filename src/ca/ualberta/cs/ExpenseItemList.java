@@ -1,10 +1,12 @@
 package ca.ualberta.cs;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
 
-public class ExpenseItemList {
+public class ExpenseItemList implements Serializable {
 	
+	private static final long serialVersionUID = 7151902898107739087L;
 	protected ArrayList<ExpenseItem> ExpenseItemList;
 	protected ArrayList<Listener> itemlisteners;
 
