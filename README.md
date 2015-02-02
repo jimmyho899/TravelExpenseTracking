@@ -8,7 +8,7 @@ https://www.youtube.com/watch?v=2oeZzwD-t4Q&feature=youtu.be
 REFERENCES:
 
 http://google-gson.googlecode.com/svn/trunk/gson/docs/javadocs/com/google/gson/Gson.html 1/30/2015
-https://www.youtube.com/watch?v=7zKCuqScaRE Abram Hindle Student Picker 1/16/2015 \n
+https://www.youtube.com/watch?v=7zKCuqScaRE Abram Hindle Student Picker 1/16/2015 "\n"
 http://stackoverflow.com/questions/5927109/sort-objects-in-arraylist-by-date by Domchi at 1/22/2015 \n
 http://stackoverflow.com/questions/8769368/how-to-set-position-in-spinner by Adam at 1/27/2015 \n
 http://stackoverflow.com/questions/513832/how-do-i-compare-strings-in-java by Aaron Maenpaa at 1/27/2015 \n
