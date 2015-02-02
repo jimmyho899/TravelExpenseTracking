@@ -1,3 +1,22 @@
+/*
+    Travel Expense App: Keeps track of money spent on trips
+    
+    Copyright (C) 2015 Jimmy Ho jph@ualberta.ca
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 package ca.ualberta.cs;
 
 import android.app.Activity;
@@ -31,7 +50,7 @@ public class SummaryActivity extends Activity {
 			float cost = item.getCost();
 			String currency = item.getCurrency();
 			// now that we extract them we want to add it to the amount depending on what currency it is
-			// used http://stackoverflow.com/questions/513832/how-do-i-compare-strings-in-java for clarification
+			// used http://stackoverflow.com/questions/513832/how-do-i-compare-strings-in-java for clarification on Jan27/15
 			if (currency.equals("CAD")) 
 				CADamount = CADamount + cost;
 			else if (currency.equals("USD")) 
@@ -43,14 +62,14 @@ public class SummaryActivity extends Activity {
 		}
 		// now that we have updated the values of our cost for each currency we will now display it on the activity_summary
 		// first we have to convert our floats into strings so we can display them
-		// reference from http://stackoverflow.com/questions/5402637/displays-float-into-text-view
+		// reference from http://stackoverflow.com/questions/5402637/displays-float-into-text-view on Jan27/15
 		String CADstr = Float.toString(CADamount);
 		String USDstr = Float.toString(USDamount);
 		String EURstr = Float.toString(EURamount);
 		String GBPstr = Float.toString(GBPamount);
 		
 		// now we want to get our R.id of our textView where we will be displaying these and then set them
-		// http://stackoverflow.com/questions/4670951/how-call-reference-textviewfindviewbyid-from-another-class
+		// http://stackoverflow.com/questions/4670951/how-call-reference-textviewfindviewbyid-from-another-class on Jan 27/15
 		TextView CADcost = (TextView)findViewById(R.id.costCAD);
 		CADcost.setText(CADstr);
 		TextView USDcost = (TextView)findViewById(R.id.costUSD);

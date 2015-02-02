@@ -80,7 +80,7 @@ public class MainActivity extends Activity {
 			FileInputStream fis = openFileInput(FILENAME);
 			InputStreamReader isr = new InputStreamReader(fis);
 			
-			// http://google-gson.googlecode.com/svn/trunk/gson/docs/javadocs/com/google/gson/Gson.html
+			// http://google-gson.googlecode.com/svn/trunk/gson/docs/javadocs/com/google/gson/Gson.html on Jan 30/15
 			Type listType = new TypeToken<ArrayList<Claim>>() {}.getType();
 			claims = gson.fromJson(isr, listType);
 			fis.close();
@@ -125,7 +125,7 @@ public class MainActivity extends Activity {
         
         // now we want an option to delete the claim on the list
         // we will delete a claim with prompt user if the user holds on a claim
-        // based on Abram Hindle Student Picker https://www.youtube.com/watch?v=7zKCuqScaRE
+        // based on Abram Hindle Student Picker https://www.youtube.com/watch?v=7zKCuqScaRE on Jan 16/15
         listView.setOnItemLongClickListener(new OnItemLongClickListener() {
 			@Override
 			public boolean onItemLongClick(AdapterView<?> adapterView, View view, 
