@@ -35,15 +35,15 @@ public final class R {
         public static final int addExpenseItem=0x7f09002b;
         public static final int category_spinner=0x7f09001b;
         public static final int claimListView=0x7f090000;
-        public static final int costCAD=0x7f090003;
-        public static final int costEUR=0x7f090006;
-        public static final int costGBP=0x7f090008;
+        public static final int costCAD=0x7f090001;
+        public static final int costEUR=0x7f090005;
+        public static final int costGBP=0x7f090007;
         public static final int costText=0x7f090019;
-        public static final int costUSD=0x7f090002;
-        public static final int currencyCAD=0x7f090004;
-        public static final int currencyEUR=0x7f090007;
-        public static final int currencyGBP=0x7f090009;
-        public static final int currencyUSD=0x7f090005;
+        public static final int costUSD=0x7f090003;
+        public static final int currencyCAD=0x7f090002;
+        public static final int currencyEUR=0x7f090006;
+        public static final int currencyGBP=0x7f090008;
+        public static final int currencyUSD=0x7f090004;
         public static final int dateofItemText=0x7f090017;
         public static final int descriptionText=0x7f09000f;
         public static final int doneButton=0x7f09000e;
@@ -63,6 +63,7 @@ public final class R {
         public static final int editstartDate=0x7f090020;
         public static final int edittoDate=0x7f09001f;
         public static final int emailClaim=0x7f09002e;
+        public static final int emailbutton=0x7f090009;
         public static final int endDate=0x7f09000d;
         public static final int itemCategory=0x7f090016;
         public static final int itemCost=0x7f090014;
@@ -74,7 +75,6 @@ public final class R {
         public static final int startDate=0x7f09000c;
         public static final int summary=0x7f09002c;
         public static final int toDate=0x7f09000a;
-        public static final int totaltextView=0x7f090001;
         public static final int typecurrency_spinner=0x7f09001a;
     }
     public static final class layout {
